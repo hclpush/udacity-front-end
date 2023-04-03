@@ -1,0 +1,46 @@
+.box{
+  border: 1px solid rgb(77, 69, 69);
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  /* background: #F8FA9D; */
+  }
+
+.card{
+  /* Add shadow*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: auto;
+  width: auto;
+  margin: auto;
+}
+
+.card img {
+  width: 50%;
+  height: 50%;
+}
+
+.header{
+  grid-area:hd;
+  background-color: lightgrey;
+  color: black;
+}
+.content{
+  grid-area: main;
+}
+.aboutme_sidebar{
+  grid-area: am;
+}
+.pastthoughts_sidebar{
+  grid-area: pt;
+}
+.newsletter_sidebar{
+  grid-area: nl;
+}
+.footer{
+  grid-area: ft;
+}
+
+.center {
+display: block;
+margin-left: auto;
+margin-right: auto;
+/* width: 75%; */
+}
