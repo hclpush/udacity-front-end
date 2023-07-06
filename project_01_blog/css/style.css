@@ -1,6 +1,6 @@
 .box{
   border: 1px solid rgb(77, 69, 69);
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  /* font-family: 'Edu NSW ACT Foundation', cursive; */
   /* background: #F8FA9D; */
   }
 
@@ -22,13 +22,14 @@
   background-color: lightgrey;
   color: black;
 }
-.content{
+.article{
   grid-area: main;
+  font-weight: normal;
 }
 .aboutme_sidebar{
   grid-area: am;
 }
-.pastthoughts_sidebar{
+.section{
   grid-area: pt;
 }
 .newsletter_sidebar{
@@ -43,4 +44,8 @@ display: block;
 margin-left: auto;
 margin-right: auto;
 /* width: 75%; */
+}
+
+.quote_caption {
+background: #e1d9c3c3;
 }
