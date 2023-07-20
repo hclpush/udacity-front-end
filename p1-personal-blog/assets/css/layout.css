@@ -1,0 +1,34 @@
+/* Mobile first */
+ /* TODO: adjust for mobile */
+.container{
+  display:grid;
+  grid-template-columns: 960px;
+  grid-template-rows: 250px 650px 800px 400px 300px;
+  /* border: 2px solid black; */
+    /* Use grid-template-area to create a mobile layout where each named space occupies its own row */
+  grid-template-areas:
+  "hd"
+  "am"
+  "main"
+  "pt"
+  "nl"
+  "ft";
+  }
+
+
+
+/* If Screen Is Wide Enough */
+@media(min-width:1000px){
+.container{
+      display:grid;
+      grid-template-columns: 850px 150px;
+      grid-template-rows: 100px 400px 100px 100px 40px;
+      grid-template-areas:
+      "hd hd hd hd hd hd hd hd"
+      "main main main main main main am am"
+      "main main main main main main pt pt"
+      "main main main main main main nl nl"
+      "ft ft ft ft ft ft ft ft";
+      /* border: 2px solid gray; */
+  }
+}
