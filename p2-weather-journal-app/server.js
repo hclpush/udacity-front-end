@@ -14,7 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Cors for cross origin allowance
-const cors = require('cors'); // Explain: Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources.
+const cors = require('cors');
+app.use(cors())
 
 // Initialize the main project folder
 app.use(express.static('website'));
@@ -27,31 +28,20 @@ function listening(){
 };
 
 // GET route
-app.get('/data', sendData);
+app.get('/all', getInfo);
 
-function sendData (req, res) {
+function getInfo (req, res) {
   res.send(projectData);
 };
 
 // POST route
-/* copied from chatGPT */
-// app.post('/data', (req, res) => {
-//   const newData = req.body;
-//   projectData.temperature = newData.temperature;
-//   projectData.date = newData.date;
-//   projectData.userResponse = newData.userResponse;
-//   res.send(projectData);
-// });
+app.post('/add', postInfo);
 
-app.post('/addData', addZip);
-
-function addZip(req,res){
-
-  newEntry = {
-    zip: req.body.zip,
-    feel: req.body.feeling,
-    temp: req.body.weather
-  }
-  projectData.push(newEntry)
-  console.log(projectData)
-};
+function postInfo(req, res) {
+  console.log(`req:`, req);
+  projectData['temp'] = req.body.temp;
+  projectData['date'] = req.body.date;
+  projectData['feel'] = req.body.feel;
+  res.send(projectData);
+  res.status(200).json({ message: 'Data received successfully!' });
+}
