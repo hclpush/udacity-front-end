@@ -28,7 +28,6 @@ function performAction(e){
             console.log(error);
             alert('Have you entered a valid zip code?');
         });
-    //userInfo.reset();
 
 }
 
