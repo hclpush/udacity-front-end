@@ -1,10 +1,10 @@
 /* Global Variables */
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather';
-const apiKey = '7769a980d6aa4777213ba68886661157'; // Personal API Key for OpenWeatherMap API
+const apiKey = '7769a980d6aa4777213ba68886661157&units=metric'; // Personal API Key for OpenWeatherMap API
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+let newDate = d.getMonth()+1 + '.'+ d.getDate()+'.'+ d.getFullYear();
 
 // Event listener to add function to existing HTML DOM element
 const generateBtn = document.getElementById('generate').addEventListener('click', performAction); // TODO: change name
@@ -85,7 +85,7 @@ const updateUI = async () =>{
   console.log(allData);
 
   // Write updated data to DOM elements
-  document.getElementById('temp').innerHTML = Math.round(allData.temp)+ ' degrees in fahrenheit';
+  document.getElementById('temp').innerHTML = Math.round(allData.temp)+ ' degrees in celcius';
   document.getElementById('content').innerHTML = allData.feel;
   document.getElementById("date").innerHTML =allData.date;
   }
